@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\CargoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,8 @@ Route::get('/', function () {
 
 Route::get('/funcionarios', [FuncionarioController::class, 'index'])->name('funcionarios.index');
 Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->name('funcionarios.create');
+
+//ROTAS PARA VIEWS DE CARGOS
+
+Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
+Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');

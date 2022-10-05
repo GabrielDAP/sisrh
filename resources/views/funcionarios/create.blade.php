@@ -1,8 +1,8 @@
 @extends('layouts.default')
 
-@section('title','Funcionários')
+@section('title','Cadastrar Funcionário')
 
 
 @section('conteudo')
-    <h1>Funcionários</h1>
+    <h1>Cadastrar Funcionário</h1>
 @endsection

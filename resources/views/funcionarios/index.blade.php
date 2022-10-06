@@ -9,6 +9,8 @@
     <table class="table table-stripped">
         <thead class="table-dark">
             <tr>
+                <th>ID</th>
+                <th>Foto</th>
                 <th>Nome</th>
                 <th>Cargos</th>
                 <th>Departamento</th>
@@ -16,12 +18,17 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($funcionarios as $funcionario)
+    
             <tr>
-                <td>Edemilton</td>
-                <td>Professor</td>
-                <td>Sistema de Informação</td>
+                <td>{{ $funcionario->id }}</td>
+                <td><img src="/images/funcionarios/{{ $funcionario->foto }}" alt="{{ $funcionario->nome }}" width="100"></td>
+                <td>{{ $funcionario->nome }}</td>
+                <td>{{ $funcionario->cargo->descricao }}</td>
+                <td>{{ $funcionario->departamento->nome }}</td>
                 <td></td>
             </tr>
+            @endforeach
         </tbody>
 
     </table>

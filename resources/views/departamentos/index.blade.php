@@ -17,9 +17,9 @@
         <tbody>
             @foreach ($departamentos as $departamento)
             <tr>
-                <td>{{ $departamento->id }}</td>
-                <td>{{ $departamento->nome }}</td>
-                <td>
+                <td class="align-middle">{{ $departamento->id }}</td>
+                <td class="align-middle">{{ $departamento->nome }}</td>
+                <td class="align-middle">
                     <a href="#" class="btn btn-success mb-2 fs-8"><i class="bi bi-person"></i></a>
                     <a href="#" class="btn btn-primary mb-2 fs-8"><i class="bi bi-pen"></i></a>
                     <a href="#" class="btn btn-danger mb-2 fs-8"><i class="bi bi-trash3"></i></a>

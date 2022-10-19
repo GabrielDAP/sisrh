@@ -16,7 +16,7 @@
 
                     <div class="mb-3 col-sm-4">
                         <label for="telefone" class="form-label fw-bold">Data:</label>
-                        <input type="text" name="idade" class="form-control form-control-lg bg-light" value="" required>
+                        <input type="date" name="data_nasc" class="form-control form-control-lg bg-light" value="" required>
                     </div>
 
                     <div class="mb-3 col-sm-4">
@@ -48,9 +48,11 @@
                         <label for="departamento" class="form-label fw-bold">Departamento:</label>
                         <select class="form-select form-select-lg" aria-label=".form-select-lg example">
                             <option selected> </option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Feminino</option>
-                            <option value="3">Prefiro não declarar</option>
+                            <option value="1">Departamento de Tecnologia</option>
+                            <option value="2">Departamento Financeiro</option>
+                            <option value="3">Departamento Comercial</option>
+                            <option value="4">Zeladoria</option>
+                            <option value="5">Recursos Humanos</option>
                           </select>
                     </div>
 
@@ -58,9 +60,14 @@
                         <label for="cargo" class="form-label fw-bold">Cargo:</label>
                         <select class="form-select form-select-lg" aria-label=".form-select-lg example">
                             <option selected> </option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Feminino</option>
-                            <option value="3">Prefiro não declarar</option>
+                            <option value="1">Gerente de Tecnologia</option>
+                            <option value="2">Gerente Financeiro</option>
+                            <option value="3">Gerente Comercial</option>
+                            <option value="4">Supervisor</option>
+                            <option value="5">Auxiliar de Limpeza</option>
+                            <option value="6">Auxiliar Administrativo</option>
+                            <option value="7">Técnico de Informática</option>
+                            <option value="8">Assistente Comercial</option>
                           </select>
                     </div>
 

@@ -6,7 +6,7 @@
 @section('conteudo')
     <h1>Funcionários</h1>
         <a href="{{ route('funcionarios.create') }}" class="btn btn-primary float-end mb-2 rounded-circle fs-4"><i class="bi bi-person-plus-fill"></i></a>
-    <table class="table table-stripped">
+    <table class="table table-striped">
         <thead class="table-dark">
             <tr>
                 <th>ID</th>
@@ -19,14 +19,16 @@
         </thead>
         <tbody>
             @foreach ($funcionarios as $funcionario)
-    
             <tr>
                 <td>{{ $funcionario->id }}</td>
                 <td><img src="/images/funcionarios/{{ $funcionario->foto }}" alt="{{ $funcionario->nome }}" width="100"></td>
                 <td>{{ $funcionario->nome }}</td>
                 <td>{{ $funcionario->cargo->descricao }}</td>
                 <td>{{ $funcionario->departamento->nome }}</td>
-                <td></td>
+                <td>
+                    <a href="#" class="btn btn-primary mb-2 fs-8"><i class="bi bi-pen"></i></a>
+                    <a href="#" class="btn btn-danger mb-2 fs-8"><i class="bi bi-trash3"></i></a>
+                </td>
             </tr>
             @endforeach
         </tbody>

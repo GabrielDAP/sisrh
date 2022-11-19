@@ -9,15 +9,22 @@ class Funcionario extends Model
 {
     use HasFactory;
     
-    public function user(){
+    protected $fillable = [
+        'nome', 'data_nasc', 'sexo', 'email', 'telefone', 'cpf', 'foto', 'salario', 'id_cargo', 'id_departamento', 'id_user'
+    ];
+
+    public function user()
+    {
         return $this->belongsTo(User::class, 'id_user');
     }
 
-    public function departamento(){
+    public function departamento()
+    {
         return $this->belongsTo(Departamento::class, 'id_departamento');
     }
 
-    public function cargo(){
+    public function cargo()
+    {
         return $this->belongsTo(Cargo::class, 'id_cargo');
     }
 }

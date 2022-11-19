@@ -1,31 +1,23 @@
 @extends('layouts.default')
 
-@section('title','Cadastrar Cargos')
-
+@section('title', 'Cadastrar Cargos')
 
 @section('conteudo')
-    <body class="bg-light">
-        <div class="container border border-2 rounded-4 p-4 bg-white mb-5" style="max-width: 1200px;">
-            <form method="POST">
-                <h1 class="mb-4">Cadastrar Cargos</h1>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="nome" class="form-label fw-bold">Nome:</label>
-                        <input type="text" name="nome" class="form-control form-control-lg bg-light" value="" required>
-                    </div>
-
-                    <div class="d-grid mb-4 col-sm-2">
-                        <input type="button" value="Cadastrar" class="btn btn-outline-primary btn-lg">
-                    </div>
-    
-                    <div class="d-grid mb-4 col-sm-2">
-                        <input type="button" value="Cancelar" class="btn btn-outline-danger btn-lg">
-                    </div>
+    <div class="container-fluid shadow bg-white p-4">
+        <h1>Cadastrar Cargo</h1>
+        <form class="row g-4" method="post" action="{{ route('cargos.store') }}">
+            @csrf
+            <div class="mt-5">
+                <div>
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <input type="text" name="descricao" class="form-control form-control-lg bg-light" value=""
+                        required>
                 </div>
-                
-            </form>
-        </div>
-
-        <script src="js/bootstrap.bundle.min.js"></script>
-    </body>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                <a href="{{ route('cargos.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
+                </div>
+            </div>
+        </form>
+    </div>
 @endsection

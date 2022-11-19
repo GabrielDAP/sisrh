@@ -10,49 +10,61 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
         <div class="container">
-          <a class="navbar-brand" href="/"><img src="/images/layout/logo_white.png" height="30px" alt="Sis.RH"></a>
+          <a href="/"><img src="/images/layout/logo_white.png" height="30" alt="Sis.RH"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+              <li class="nav-item px-3">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item px-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Funcionários</a>
+                <ul class="dropdown-menu">
+                    <li><a href="{{ route('funcionarios.create') }}" class="dropdown-item">Cadastrar Novo</a></li>
+                    <li><a href="{{ route('funcionarios.index') }}" class="dropdown-item">Lista de Funcionários</a></li>
+                    <li><hr class='dropdown-divider'/></li>
+                    @foreach ($departamentos as $departamento)
+                    <li><a href="" class="dropdown-item">{{ $departamento->nome }}</a></li>                     
+                    @endforeach
 
-              <li class="nav-item px-3">
-                <a class="nav-link" aria-current="page" href="#">Home</a>
+                </ul>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="{{ route('funcionarios.index') }}">Funcionários</a>
+                <a class="nav-link" href="{{route('cargos.index')}}">Cargos</a>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
+                <a class="nav-link" href="{{route('departamentos.index')}}">Departamento</a>
               </li>
               <li class="nav-item px-3">
-                <a class="nav-link" href="{{ route('departamentos.index') }}">Departamentos</a>
+                <a class="nav-link" href="{{route('usuarios.index')}}">Usuários</a>
               </li>
-              <li class="nav-item px-3">
-                <a class="nav-link" href="#">Usuários</a>
-              </li>
+              <li class="nav-item px-3 dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Olá {{ auth()->user()->name }}</a>
+                <ul class="dropdown-menu">
+                    <li><a href="" class="dropdown-item">Alterar Dados</a></li>
+                    <li><a  class="dropdown-item" href="{{ route('login.logout') }}">Sair</a></li>
+                
             </ul>
           </div>
         </div>
       </nav>
-    
 
-    <div class="container mb-4">
+      <div class="container mb-3 p-4 bg-white shadow-sm position-relative"> 
         @yield('conteudo')
-    </div>
+      </div>
 
-
-    <footer class="container-fluid bg-light p-3 text-center">
+      <footer class="container-fluid bg-light p-3 text-center">
         <span>
-            Sistema desenvolvido na aula de Programação Avançada do curso de Sistemas de Informação<br>
-            Período letivo 2022.2<br>
-            Centro Universitário UNIRIOS
+            Sistema desenvolvido na aula de Programação Avançada do curso de Sistemas de Informação <br>
+            Periódo Letivo: 2022.2 <br>
+            Centro Universitário UniRios 
         </span>
-    </footer>
+      </footer>
 
     <script src="/js/bootstrap.bundle.min.js"></script>
 </body>

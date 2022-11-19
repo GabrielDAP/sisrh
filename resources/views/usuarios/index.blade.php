@@ -22,7 +22,7 @@
         </thead>
         <tbody>
             @foreach ($usuarios as $usuario)
-            <tr>
+            <tr class="text-center">
                 <td class="align-middle text-center">{{ $usuario->id }}</td>
                 <td class="align-middle">{{ $usuario->name }}</td>
                 <td class="align-middle">{{ $usuario->email }}</td>
@@ -36,5 +36,6 @@
         </tbody>
     </table>
 
+    {{-- {{ $cargos->links('paginacao') }} --}}
 @endsection
 

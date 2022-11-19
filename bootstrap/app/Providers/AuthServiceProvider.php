@@ -30,7 +30,6 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('acessar-usuarios', function(User $user){
             return $user->tipo == 'admin';
-            
         });
     }
 }

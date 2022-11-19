@@ -9,10 +9,14 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function __construct(){
-       $this->middleware('auth');
+
+    public function __construct() 
+    {
+        $this->middleware('auth');
     }
-    public function index() {
+    
+    public function index()
+    {
         $totalFuncionarios = Funcionario::all()->count();
         $totalCargos = Cargo::all()->count();
         $totalDepartamentos = Departamento::all()->count();

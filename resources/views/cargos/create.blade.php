@@ -7,6 +7,7 @@
         <h1>Cadastrar Cargo</h1>
         <form class="row g-4" method="post" action="{{ route('cargos.store') }}">
             @csrf
+            <!-- token csrf -->
             <div class="mt-5">
                 <div>
                     <label for="descricao" class="form-label">Descrição</label>
@@ -15,7 +16,7 @@
                 </div>
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
-                <a href="{{ route('cargos.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
+                    <a href="{{ route('cargos.index') }}" class="btn btn-danger btn-lg">Cancelar</a>
                 </div>
             </div>
         </form>
